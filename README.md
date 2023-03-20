@@ -1,6 +1,6 @@
-# my-unplugin
+# unplugin-auto-upload
 
-[![NPM version](https://img.shields.io/npm/v/my-unplugin?color=a1b858&label=)](https://www.npmjs.com/package/my-unplugin)
+[![NPM version](https://img.shields.io/npm/v/unplugin-auto-upload?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-auto-upload)
 
 Starter template for [unplugin](https://github.com/unjs/unplugin).
 
@@ -9,10 +9,10 @@ Starter template for [unplugin](https://github.com/unjs/unplugin).
 To use this template, clone it down using:
 
 ```bash
-npx degit antfu/my-unplugin my-unplugin
+npx degit bbcvc/unplugin-auto-upload unplugin-auto-upload
 ```
 
-And do a global replace of `my-unplugin` with your plugin name.
+And do a global replace of `unplugin-auto-upload` with your plugin name.
 
 Then you can start developing your unplugin 🔥
 
@@ -22,7 +22,7 @@ To release a new version, run: `pnpm run release`
 ## Install
 
 ```bash
-npm i my-unplugin
+npm i unplugin-auto-upload
 ```
 
 <details>
@@ -30,7 +30,7 @@ npm i my-unplugin
 
 ```ts
 // vite.config.ts
-import Starter from 'my-unplugin/vite'
+import Starter from 'unplugin-auto-upload/vite'
 
 export default defineConfig({
   plugins: [
@@ -48,7 +48,7 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'my-unplugin/rollup'
+import Starter from 'unplugin-auto-upload/rollup'
 
 export default {
   plugins: [
@@ -68,7 +68,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('my-unplugin/webpack')({ /* options */ })
+    require('unplugin-auto-upload/webpack')({ /* options */ })
   ]
 }
 ```
@@ -82,7 +82,7 @@ module.exports = {
 // nuxt.config.js
 export default {
   buildModules: [
-    ['my-unplugin/nuxt', { /* options */ }],
+    ['unplugin-auto-upload/nuxt', { /* options */ }],
   ],
 }
 ```
@@ -99,7 +99,7 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('my-unplugin/webpack')({ /* options */ }),
+      require('unplugin-auto-upload/webpack')({ /* options */ }),
     ],
   },
 }
@@ -113,7 +113,7 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import Starter from 'my-unplugin/esbuild'
+import Starter from 'unplugin-auto-upload/esbuild'
 
 build({
   plugins: [Starter()],

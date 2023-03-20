@@ -1,17 +1,17 @@
 {
-  "name": "my-unplugin",
+  "name": "unplugin-auto-upload",
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@7.1.1",
   "description": "Register global imports on demand for Vite and Webpack",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/my-unplugin#readme",
+  "homepage": "https://github.com/bbcvc/unplugin-auto-upload#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/my-unplugin.git"
+    "url": "git+https://github.com/bbcvc/unplugin-auto-upload.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/my-unplugin/issues"
+    "url": "https://github.com/bbcvc/unplugin-auto-upload/issues"
   },
   "keywords": [
     "unplugin",
@@ -87,7 +87,7 @@
     "unplugin": "^1.0.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.33.1",
+    "@bbcvc/eslint-config": "^0.33.1",
     "@types/node": "^18.11.13",
     "bumpp": "^8.2.1",
     "chalk": "^5.2.0",
