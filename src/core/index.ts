@@ -1,15 +1,22 @@
+import path from 'node:path'
 import { createUnplugin } from 'unplugin'
 import type { Options } from '../types'
+import { uploadFileList } from '../util/ali-oss'
 
-export default createUnplugin<Options | undefined>(options => ({
+export default createUnplugin<Options>(options => ({
   name: 'unplugin-auto-upload',
   enforce: 'pre',
   transformInclude(id) {
-    return id.endsWith('.vue')
+    return id.endsWith('vue')
   },
-  transform(code) {
-    // if (code.includes('@cdn'))
-    // return code.replace('@cdn/demo.jpg', 'https://telegraph-image-4y1.pages.dev/file/e3f59e5a40ef3fa2d9659.jpg')
-    return code
+  async transform(code, id) {
+    const filelist = code.match(/(?<=(img[^>]*src="))[^"]*/g)
+    await uploadFileList(options.client, filelist?.map(file => path.resolve(id, '../', file)))
+    const data = code.replace(/(?<=(img[^>]*src="))[^"]*/g, $1 => new URL(path.basename($1), options.base).toString())
+    return data
+  },
+  vite: {
+    apply: 'build',
   },
 }))
+
